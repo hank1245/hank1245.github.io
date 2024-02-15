@@ -6,7 +6,7 @@
 ###########################################################
 
 # Name of website
-title: Hank Kim Dev blog
+title: Hank Dev blog
 
 # Your name to show in the footer
 author: Hank Kim
@@ -43,7 +43,6 @@ round-avatar: true
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
   email: "hank29206880@example.com"
-  rss: true  # remove this line if you don't want to show an RSS link at the bottom
   github: daattali
   twitter: daattali
  linkedin: daattali
