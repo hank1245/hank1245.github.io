@@ -5,6 +5,10 @@
 ### the initial set up you won't need to come back to this file often.
 ###########################################################
 
+############################
+# --- Required options --- #
+############################
+
 # Name of website
 title: Hank Dev blog
 
@@ -42,13 +46,10 @@ round-avatar: true
 # You can change the order that they show up on the page by changing the order here.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: "hank29206880@example.com"
-  github: daattali
+  email: "hank29206880@gmail.com"
+  github: "https://github.com/hank1245"
   twitter: daattali
  linkedin: daattali
-
-# If you want your website to generate an RSS feed, provide a description
-# The URL for the feed will be https://<your_website>/feed.xml
 
 ###########################
 # --- General options --- #
