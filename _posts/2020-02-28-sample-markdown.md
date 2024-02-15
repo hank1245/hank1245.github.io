@@ -1,91 +1,292 @@
 ---
 layout: post
-title: Sample blog post to learn markdown tips
-subtitle: There's lots to learn!
-gh-repo: daattali/beautiful-jekyll
-gh-badge: [star, fork, follow]
-tags: [test]
+title: Abraham Silberschatz 운영체제 Chapter 1 요약
+subtitle: 개관
+tags: [OS]
 comments: true
-author: Bill Smith
+author: Hank Kim
 ---
 
-{: .box-success}
-This is a demo post to show you how to write blog posts with markdown.  I strongly encourage you to [take 5 minutes to learn how to write in markdown](https://markdowntutorial.com/) - it'll teach you how to transform regular text into bold/italics/tables/etc.<br/>I also encourage you to look at the [code that created this post](https://raw.githubusercontent.com/daattali/beautiful-jekyll/master/_posts/2020-02-28-sample-markdown.md) to learn some more advanced tips about using markdown in Beautiful Jekyll.
-
-**Here is some bold text**
-
-## Here is a secondary heading
-
-[This is a link to a different site](https://deanattali.com/) and [this is a link to a section inside this page](#local-urls).
-
-Here's a table:
-
-| Number | Next number | Previous number |
-| :------ |:--- | :--- |
-| Five | Six | Four |
-| Ten | Eleven | Nine |
-| Seven | Eight | Six |
-| Two | Three | One |
-
-How about a yummy crepe?
-
-![Crepe](https://beautifuljekyll.com/assets/img/crepe.jpg)
-
-It can also be centered!
-
-![Crepe](https://beautifuljekyll.com/assets/img/crepe.jpg){: .mx-auto.d-block :}
-
-Here's a code chunk:
-
-~~~
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-~~~
-
-And here is the same code with syntax highlighting:
-
-```javascript
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-```
-
-And here is the same code yet again but with line numbers:
-
-{% highlight javascript linenos %}
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-{% endhighlight %}
-
-## Boxes
-You can add notification, warning and error boxes like this:
-
-### Notification
-
-{: .box-note}
-**Note:** This is a notification box.
-
-### Warning
-
-{: .box-warning}
-**Warning:** This is a warning box.
-
-### Error
-
-{: .box-error}
-**Error:** This is an error box.
-
-## Local URLs in project sites {#local-urls}
-
-When hosting a *project site* on GitHub Pages (for example, `https://USERNAME.github.io/MyProject`), URLs that begin with `/` and refer to local files may not work correctly due to how the root URL (`/`) is interpreted by GitHub Pages. You can read more about it [in the FAQ](https://beautifuljekyll.com/faq/#links-in-project-page). To demonstrate the issue, the following local image will be broken **if your site is a project site:**
-
-![Crepe](/assets/img/crepe.jpg)
-
-If the above image is broken, then you'll need to follow the instructions [in the FAQ](https://beautifuljekyll.com/faq/#links-in-project-page). Here is proof that it can be fixed:
-
-![Crepe]({{ '/assets/img/crepe.jpg' | relative_url }})
+# 컴퓨터란
+## 컴퓨터의 정의
+ 최소 구성요소: CPU 와 메모리
+ 최소한의 하드웨어와 소프트웨어가 존재하는 모든 것(세탁기, 냉장고 등)
+## 컴퓨터의 분류
+ 서버: 다수의 사용자의 요청을 받아서 처리하는 고성능 컴퓨터
+ PC 범용, 개인용 컴퓨터
+ 임베디드: 특정 용도에 맞게 개발한 컴퓨터
+## 컴퓨터 시스템 구성요소
+ computer hardware -> operating system ->
+system and application programs(compiler, assembler, text editor, database system..) -> users
+## 컴퓨터 시스템 Organization
+ CPU, 메모리, 입출력장치(I/O Device == 디스크도 포함)
+ 버스를 통해 메모리에 연결됨
+ 버스 topology 이기 때문에 한번에 한 페어만 통신이 가능하다
+## Modern PC Architecture
+ North Bridge: 메모리와 연결되어있는 컨트롤러로 버스의 대역폭이 크고 빠르다.
+ South Bridge: 주변장치 버스 컨트롤러이다. 버스의 대역폭보다 디스크의 속도가 더 느리기
+때문에 bottleneck 이 발생한다. 따라서 North Bridge 와 비교해서 버스의 대역폭이 작다.
+ CPU: 컴퓨터를 동작시키는 주체. 데이터 저장이나 불러오기 출력 등의 명령을 모두 CPU 가
+내린다. 입출력장치들이 동작하도록 명령을 내리는 주체도 CPU 이다. 직접적으로 디바이스에
+명령을 내리는것이 아니라 컨트롤러를 통해 명령한다. 디테일한 작업들은 컨트롤러가
+수행하고 CPU 에 보고한다.
+ CPU, 메모리,IO 디바이스 컨트롤러는 버스로 연결되어있고 IO 디바이스는 컨트롤러에 연결된
+형태.
+# 운영체제란
+## 운영체제의 역할
+ Abstraction: 운영체제는 하드웨어 리소스 매니저. 하드웨어 자원을 관리하고 하드웨어 사용을
+쉽게 해주는 인터페이스를 제공하여 유저가 하드웨어를 쉽게 사용할 수 있도록
+Abstraction 을 제공한다.
+ Sharing: 여러 프로세스가 하드웨어 리소스를 공유해서 사용해야 하므로 효율적으로
+리소스를 공유해서 사용할 수 있도록 time multiplexing, space multiplexing 기능을 함. space
+multiplexing 은 메모리 공간을 잘 나눠서 쓰는 것이고 time multiplexing 은 여러개의
+프로세스가 동시에 동작하는 것처럼 보이도록 리소스를 분배.
+ Protection: 하드웨어 자원 보호. 예: 포인터를 잘못 사용해서 잘못된 메모리 주소 참조 문제
+등
+ Fairness: 한 프로세스가 독점적으로 리소스를 사용하지 않도록 함. 하나의 프로세스가
+독점하면 다른 프로세스가 프리징된다.
+ Performance: 최고의 성능을 내는것을 지향해서 동작한다.
+B. 운영체제를 지칭하는 용어
+ Resource Allocator
+ Kernel == 알맹이. 가장 많이 쓰는 용어. 넓은 의미에서 GUI, 시스템 어플리케이션을
+포함해서 OS 라고 부르고 리소스 매니징의 핵심적인 기능을 수행하는것을 커널이라고 부름.
+ Control Program
+# 컴퓨터 시스템의 동작
+## CPU 구조
+ ALU: Arithmetic Logic Unit. 논리연산 유닛이라고 하며 일반적인 연산을 담당
+ CU: Control Unit. Instruction 을 수행하는 유닛.
+ MMU: memory management Unit. CPU 가 메모리 접근하는것을 관리. 가상화 기능을 제공하고,
+잘못된 참조가 일어났을 때의 판단 등의 메모리와 관련된 역할을 한다.
+ Registers
+ PC: Program Counter. 현재 어디의 instruction 을 수행해야하는지의 위치를 저장.
+ IR: Instruction Register. 현재 수행중인 명령어를 저장함
+ SP: Stack Pointer 스택의 TOP 주소를 저장한다.
+ PSW: Process status word 프로세스의 상태(waiting, ready 등)을 저장.
+## 폰 노이만 아키텍쳐
+ 현대에 사용하고 있는 대부분 컴퓨터의 하드웨어 구조.
+ 하나의 메모리 안에 코드와 데이터를 함께 넣어놓고 사용한다.
+ 다른 대표적인 아키텍쳐로 하버드 아키텍쳐가 있음. 메모리에 대한 버스를 따로 두고
+한쪽에는 코드, 한쪽에는 데이터만 가져옴으로써 두 개의 메모리에서 병렬적으로 가져올 수
+있다. 하지만 메모리를 할당하기 복잡하고 하드웨어의 설계도 복잡하다. 별도의 버스와
+IO 장치가 필요하기 때문이다. 임베디드 장치에서 하버드 아키텍쳐와 유사한 XIP 구조를
+사용한다.
+## Bootstrapping (리눅스)
+ 전원이 들어오면 cpu 가 가장먼저 동작해서 제대로 돌아갈 수 있는 상태인지 스스로
+체크한다.
+ 샘플코드를 롬에서 가져와서 테스트를 돌린다. 샘플코드 끝에는 바이오스로 이동하도록
+지정되어있음.
+ 바이오스(롬 혹은 플래시로 되어있다 Basic Input Output System = BIOS) 메모리, 기본 입출력
+디바이스 잘 동작하는지 체크한다. 메모리를 0 부터 max 번지까지 초기화해본다.
+바이오스에는 필수적인 하드웨어 테스트 코드들이 적혀있다. 이러한 테스트 과정을 POST
+power on self test 라고 한다. 바이오스와 동일하게 POST 를 수행하는 것으로 UEFI(Unified
+Extensible Firmware Interface)가 있다.
+ BIOS/UEFI 는 마지막으로 부트로더를 실행시킨다. 부트로더는 LILO/GRUB 가 있다.
+LILO(Linux Loader)는 시작점을 MBR 애 저장한다. 업데이트하면 시작점이 달리질 수 있기
+때문에 업데이트 때마다 MBR 을 계속 갱신해야하고 깨지면 부팅이 안되기 때문에 신뢰성이
+떨어진다.GRUB 은 압축되어있는 이미지의 시작점을 주솟값보다 안정적인 벡터값으로
+가리키도록 해서 LILO 의 문제점을 해결했다.
+ 부트로더는 여러개의 운영체제 시작점을 가지고 있고 실행시킬 운영체제를 선택하면
+압축되어있던 운영체제를 메모리로 로드하고 압축을 풀어서 실행시킨다.
+## Instruction Set Architecture(ISA)와 성능향상을 위한 아키텍쳐
+ CISC/RISC: CISC 는 Complex Instruction Set Computer 이고 RISC 는 Reduced Instruction Set
+Computer 이다. CISC 는 많이 사용되는 Instruction 조합에 대해서 하나의 Set 을 만들어
+성능을 높이는 방식이다. 하지만 CPU 에 많은 Instruction Set 회로를 구현하려다 보니
+복잡해지기 때문에 한계가 존재한다. CPU 크기가 커질수록 오히려 성능은 저하될 수 있다.
+회로가 길어지면 느려지고 발열도 많이 발생하기 때문이다. 그래서 기본적인
+Instruction 들로만 CPU 를 구성한것이 RISC 이다. 현재 둘 다 사용하고 있다. x86 시스템은
+CISC 를 사용하고, ARM 코어는 RISC 를 사용한다.
+ Pipelining: RISC 에서는 효율적으로 명령을 수행하기위해서 pipelining 을 사용한다.
+CPU 의 수행과정은
+ Fetch – 프로그램카운터가 가리키고 있는 Instruction 을 로드.
+ Decode – 명령을 전기신호로 바꿈.
+Execution
+ Write Back – 결과값을 내놓음.
+이렇게 4 가지 과정으로 이루어진다. 각각의 과정들의 Dependency 가 존재하지 않으므로
+동시에 수행되어도 문제가 없다. 이론적으로는 4 개를 병렬적으로 수행할 수 있으나 성능을
+4 배 향상시키지는 못한다. 그 이유는
+ 명령별로 Execution Time 이 다를 수 있기 때문에 지연이 발생.
+ 앞의 연산을 수행한 결과가 다음 명령의 Input 값으로 사용되는 경우가 존재.
+ 분기(조건문) 이 존재할 경우 다음에 수행될 명령어가 무엇이 될지 알 수 없음.
+이러한 이유로 실제로는 3 배정도의 성능향상 효과가 있다고 알려져있다.
+ ILP(Instruction-Level-Parallelism): 명령어를 병렬적으로 수행하기 위한 방법으로
+Superscalar 와 VLIW 가 있다. Superscalar 는 CPU 에서 하드웨어적으로 구현하는 방법으로
+인텔에서 사용한다. VLIW 는 컴파일 과정에서 코드를 분석해서 동시에 수행할수 있는것들을
+리스트업함으로써 소프트웨어적으로 구현한 방법이다.
+ Simultaneous Multithreading: 실제 코어는 하나지만 가상코어를 여러개 만드는 방법이다.
+미약한 성능향상효과가 있다.
+ Multicore: 레지스터와 Cache 는 각자 가지고 메모리는 공유하는 물리적인 CPU 를 여러개
+붙이는것이 멀티코어 아키텍쳐이다. 요즘은 대부분의 컴퓨터가 멀티코어 아키텍쳐를
+사용한다.
+ NUMA(Nom-Uniform Memory Access) multiprocessing Architecture: . 물리적인 CPU 마다
+메모리를 따로 가지고 하나의 시스템안에서 공유하는 아키텍쳐이다. 병렬 컴퓨팅을
+극대화할수 있고 사용되는 대표적인 예로는 기상청 슈퍼컴퓨터가 있다.
+ Clustered System Architecture = Distributed System: 완전히 분리된 컴퓨터를 네트워크로
+연결하고 일을 분배하면서 동작하는 분산 시스템이다. 대용량의 스토리지를 공유한다. 각각의
+컴퓨터들은 Parallel 시스템으로 구현될 수 있다. AWS 를 예로 들 수 있다.
+## I/O 동작 순서
+ CPU 는 IO 디바이스와 연결된 컨트롤러를 통해서 IO 관련 명령을 내리고 컨트롤러가 해당
+명령을 수행한다.
+컨트롤러는 IR(Instruction Register)와 DR(Data Register)를 가지고 있다. IO 를 수행할때 IO 를
+두고 다음 작업을 수행하는 것을 Async/Non-blocking IO 라고 하고, IO 가 끝날때까지
+프로세스가 기다리는 것을 Synchronous/Blocking IO 라고 한다. 대부분은 Blocking IO 에
+해당한다.
+ 컨트롤러가 HDD 에서 메모리를 가져와서 로드하는 등의 IO 작업을 기다리는 동안 CPU 는
+Context 를 저장해두고 다른 프로세스를 실행시킨다. CPU Utilization 을 극대화하기
+위해서이다.
+ IO 컨트롤러가 명령을 다 수행했을때 CPU 에게 완료됐다는 신호를 준다. 이를 하드웨어
+인터럽트라고 한다.
+ 하드웨어 인터럽트가 들어오면 CPU 는 현재 진행중이던 프로세스의 여러 값들을 저장해두고
+CPU 에서 내린다.
+ 이후 운영체제가 올라와서 인터럽트 핸들링 코드를 수행한다.
+ 완료되면 스케줄링을 통해서 선정된 다른 프로세스를 수행한다.
+## DMA (Direct Memory Access)
+ 정의: 하드디스크에서 데이터를 가져올 때 버스의 bandwidth 가 정해져 있기 때문에 용량이
+크면 한번에 로드할 수 없다. 64 비트 컴퓨터라면 버스의 크기도 64 비트이다. CPU 가 큰
+데이터를 버스의 크기로 쪼맨 것을 들고 오라는 명령을 계속해서 내리는것은 오버헤드가
+크다. 따라서 CPU 를 거치지 않고 바로 메모리로 올려주기 위해서 사용하는것이 DMA 이다.
+ 순서: CPU 에서 컨트롤러에 용량이 큰 데이터를 로드하라는 명령을 내림 -> 컨트롤러에서
+DMA 를 지원하는 하드웨어일 경우 DMA 를 사용해야겠다는 판단이 들 경우 DMA 에게
+CPU 에게 허락을 받아달라고 요청 -> DMA 가 CPU 에게 요청하고 CPU 가 승인하면 매
+fragment 마다 인터럽트를 걸어서 CPU 가 처리하지 않고 DMA 가 권한을 받아 디스크
+컨트롤러는 DMA 에 보고하고 메모리로 데이터를 올린다. 이로인해 CPU 의 오버헤드가 많이
+줄어든다.
+## 인터럽트
+ 넓은 의미의 인터럽트: 하드웨어 인터럽트, Trap , exception.
+ 하드웨어 인터럽트: 하드웨어 기기에 의해 생성된 인터럽트. 타이머 인터럽트, 키보드
+인터럽트 등이 해당한다.
+ Trap : 라이브러리 형태로 커널이 제공하는 함수 시스템콜을 호출하면 현재 진행중인
+프로세스를 중단하고 운영체제가 올라온다. 시스템 콜을 호출해서 운영체제가 올라오는것을
+trap 이라고 함
+ exception: CPU 가 스스로 거는 인터럽트이다. Divide by Zero 로 인한 fault exception 등.
+H. 스토리지
+ ROM vs RAM: ROM 은 Read Only Memory, RAM 은 Random Access Memory 로 일반적으로
+DRAM 을 지칭한다. ROM 은 CD 처럼 한번 데이터 넣고 나면 수정이 불가능하다. 굽는다고
+표현한다. 용량이 크지 않고 바이오스를 넣을때 많이 사용했었다.
+ SRAM vs DRAM: SRAM 은 Static RAM 이고 DRAM 은 Dynamic RAM 이다. SRAM 의 가격이
+더 비싸다. CPU 레지스터 혹은 캐시는 SRAM 을 사용한다. SRAM 이 더 빠르기 때문이다.
+메모리는 휘발성이 있는데 SRAM 은 전원이 공급된다는 전제하에서 한번 저장된 데이터가
+사라지지 휘발되지 않는다. 반면 DRAM 은 일정시간이 지나면 데이터가 망가지기 때문에
+리프레시를 계속 해줘야한다. 리프레시 중에는 메모리 엑세스가 불가능해 SRAM 에 비해서
+성능이 좋지 않다. DRAM 은 신호가 점점 희미해지는 구조를 가지고 있다.
+ 계층구조: (최상) 레지스터 -> 캐시 -> DRAM(메인 메모리) -> Solid-State-Disk(SSD) -> Hard
+Disk -> Optical Disk(CD) -> Magnetic Tape (최하). 아래로 갈수록 가격이 싸지고 용량은
+늘어난다.
+ Caching Policy: Write-through vs Write Back. Write Through 는 CPU 가 메모리에서 데이터를
+읽어서 연산을 수행한 결과를 메모리에 저장할때 즉시 Disk 에 있는 데이터도 변경하는
+방식이다. 메모리와 디스크의 일관성을 유지할 수 있지만 CPU Utilization 이 떨어져서 성능에
+영향을 미친다. Write Back 은 CPU 가 유휴상태인 경우에 바뀐 내용을 한꺼번에 반영하는
+방식이다. 성능은 좋지만 일관성이 떨어질 수 있다. 컴퓨터가 꺼지면서 데이터가 날아가는
+등의 경우가 발생할수도 있다. 폰 노이만 아키텍쳐와 하버드 아키텍쳐의 캐싱 성능을
+비교하면 하버드 아키텍쳐의 성능이 더 좋다.
+ HDD 구조:
+플래터 - 은색의 판 한장.
+Surface - 데이터가 기록되는 표면.
+Arm - 플래터마다 하나씩 존재하며 끝에 데이터를 읽을수 있는 핀인 Head 가 존재. Arm 이
+움직이면서 특정 지점의 데이터를 읽는다.
+Track - arm 들이 움직이면서 데이터를 저장하는 동심원.
+Sector- Track 의 일부분. 512 바이트만큼의 크기를 가진다. 디스크에 저장되는 데이터 크기의
+최소단위이다. 몇 번 플래터의 트랙, 섹터를 알면 암을 움직여서 데이터를 읽어올 수 있다.
+Cylinder: 각 플래터의 똑같은 위치의 트랙들의 모음.
+ HDD 데이터를 읽기 위한 3 가지 단계:
+ Arm Seek - arm 이 원하는 트랙으로 이동한다.
+ 돌고있는 플래터에 헤드를 내려서 데이터를 가져온다.
+ 읽은 데이터가 버스를 타고 메모리에 전달된다.
+이중에서 가장 느린 동작은 arm seek 이다. 이 시간을 최소화해야 하드디스크의 속도를
+개선할 수 있다. 이것을 위해서 데이터를 최대한 모아서 연속적으로 한 플래터, 연속적인
+트랙에 저장한다. 또한 같은 실린더에 데이터를 연속적으로 쓰면 armseek 시간을 최소화할
+수 있다. 디스크 조각모음이라는 윈도우의 기능이 있었는데, 이것이 armseek 시간을
+최소화하기 위한 기능이었다.
+ SSD: 플래시 컨트롤러와 NAND 플래시 메모리로 구성되어 있다. 전력 공급이 되지 않아도
+데이터가 남아있고 랜덤 액세스가 가능하다. NAND 플래시는 블럭으로 되어있는데, 블럭
+하나당 데이터를 지우고 다시 쓸 수 있는 횟수가 정해져있다. 하나라도 동작하지 않으면
+전체를 사용할 수없기 때문에 웨어레벨링 기능이 구현되어있다.
+## 시스템 콜과 프로텍션
+ Dual Mode Operation: Kernel mode/User mode 로 나뉜다. User mode 에서 프로세스가
+운영체제로 trap 인터럽트를 걸면 운영체제가 IO 디바이스를 컨트롤한다. 하드웨어에 대한
+권한은 Kernel Mode 가 갖는다. IO 작업이 완료되면 하드웨어 인터럽트로 인해서 운영체제가
+다시 동작하고 프로세스로 전달된다. User Mode 에서 Kernel Mode 로 요청할 수 있는
+인터페이스가 시스템콜 == 트랩이다.
+ 하드웨어 프로텍션: 운영체제가 모든 권한을 가지고 하드웨어를 관리하며 한 프로세스가
+리소스를 독점하는 등의 상황을 막는것이 Protection 이다. CPU Protection 은 한 프로세스가
+계속해서 CPU 를 점유하는 것을 방지하기 위한 것으로, CPU 안에 타이머가 하드웨어로서
+존재한다. 리눅스 기준으로 10ms 이며 사용한 시간이 10ms 에 도달하면 자기 자신에게
+인터럽트를 걸어 해당 프로세스 작업 내용을 저장해두고 스케줄러 정책에 의해 선정된 다른
+프로세스를 가져와서 실행한다. 메모리 프로텍션은 포인터로 다른 프로세스의 메모리에
+허락없이 접근하는 것과 같은 상황에서 프로세스를 kill 하는 정책이다. IO 프로텍션은
+운영체제를 통해서만 IO 디바이스를 사용할 수 있도록 하는 것으로 dual mode operation 에
+해당한다.
+ OS 가 시스템을 제어하는 경우는 부트스트래핑, 시스템콜 (프로세스가 IO 디바이스
+사용요청) , 인터럽트(하드웨어 인터럽트는 IO 디바이스, CPU 타이머가 요청)가 발생한 경우로
+요약할 수 있다.
+# 컴퓨터의 역사
+## 1 세대 (1945~1955)
+ 애니악: 존 폰 노이만이 설계했다. 진공관에 전기신호를 넣어서 0,1 조합을 만들었다. OS 가
+존재하지 않았고 프로그래밍 언어도 없었다.
+## 2 세대(1955~1965)
+ 진공관에서 트랜지스터로 바뀌면서 크기가 줄어들었다. Batch System 이 존재했다. OS 라고
+불리지 않고 Resident Monitor 라고 불렸다. IO 중에 다른 작업을 수행할 수 없고 프로세스
+하나가 끝나야 다른 것을 실행시킬 수 있었기 때문에 입출력 bottleneck 이 컸다.
+## 3 세대(1965-80)
+ 집적회로 IC 를 사용했다. 컴퓨터 아키텍쳐라는 개념이 생겨났다. IBM 의 IBM360 이 해당한다
+ IO 를 하는 동안 CPU 가 다른 작업을 할 수 있게 하는 멀티프로그래밍 시스템을 적용해서
+CPU Utilization 을 늘렸다. Fairness 를 보장하기 위해서 Time-sharing system 을 적용하여
+response time 을 줄였다. 현재까지도 중요하게 사용되는 2 가지 개념이 적용된 전통적인
+OS 의 특징이 되었다.
+## 4 세대(현재)
+ IC 를 더욱 작게 만들어서 (LSI, VLSI) 데스크탑 PC 가 생겨났다.
+ 현대 OS 의 기능으로는 GUI, 멀티미디어(음악,영상 등) 인터넷과 웹 등이 있다.
+# 컴퓨팅 환경
+## Traditional computing
+ 메인프레임 시스템: 배치시스템이나, 멀티프로그래밍, 타임쉐어링 기능 제공하는 은행
+서버 등이 해당
+ 데스크탑 시스템
+## 모바일 컴퓨팅
+ 특징: 메모리와 프로세서 기능이 제한되어있고 디스플레이도 작다
+## 실시간 시스템
+ 정의: 정해진 시간 내에 정해진 일을 끝내야 하는 시스템
+ Hard Real-time vs Soft Real-time: Hard Real-time 은 항공기 컨트롤 시스템 등 반드시 정해진
+시간내에 끝내야하는 시스템이다. Soft Real-time 시스템은 게임서버, 비디오 스트리밍 등이
+해당한다.
+## 임베디드 시스템
+ 특정 목적을 위해서 설계된 시스템이다. 목적을 수행할 수 있는 최소한의 하드웨어를 가지고
+있다.
+## 클라이언트-서버 컴퓨팅
+ 일반적으로 데이터센터에 네트워크 연결된 서버가 존재하고 서버가 제공하는 서비스를
+클라이언트가 받아와서 수행한다. Clustered Server 로 병렬, 분산 컴퓨팅을 사용
+## Peer-to-Peer 컴퓨팅
+ ad-hoc 이라고도 하며 이미 구축된 네트워크에 붙는게 아니라 네트워크를 만들어서 통신한다.
+인터넷에 연결될 필요가 없다.
+## 클라우드 컴퓨팅
+ Iaas: Infrastructure as a service. 하드웨어 자원만을 제공한다
+ Paas: Platform as a Service. 예를 들어리눅스 기반 OS 등을 제공하고 그 위에 프로그램을
+만드는 경우.
+ Saas: Software as a Service. 서비스 단위로 구현된 아이클라우드 등.
+ 가상화 기술이 중요하다. 컴퓨팅 파워를 묶어서 재분배할 수 있도록 가상화 클라우드를
+사용한다.
+## 가상화
+ 대표적인 가상화로 jvm 이 있다. .java 목적파일을 vm 을 통해서 바이너리를 생성하고
+실행한다.
+ 하드웨어 자원을 나눠쓰고 각 vm 위에 커널이 올라간다.
+# 운영체제의 역사
+## IBM 360
+ 멀티프로그래밍 제공
+## MIT CTSS
+ 타임 쉐어링 시스템
+## UNIX (1969)
+ 어셈블리로 만들어졌고 71 년에 C 로 컨버팅되었다. BELL Lab 에서 만든 오픈소스이며 C 언어
+또한 BELL LAB 에서 개발했다.
+ 유닉스를 계승한 운영체제: AT&T 에서 System 5, 버클리에서 BSD 를 만들었고 BSD 를
+계승한 SunOS 가 나왔다. SunOS 가 발전해서 Solaris 가 되었다. Unix 7th edition 을 계승해서
+Xenix. BSD 에서 MACH - NextStep 이 나오고 스티브 잡스가 인수하여 macOS X 의 기반이
+되었다.
+93 년도 경에 리눅스가 나왔다. HP, IBM AIX 등 여러 OS 가 유닉스 계열이다.
+ POSIX: 같은 유닉스 계열의 OS 중에서 시스템 콜 형식이 달라서 호환이 안되는 경우가
+발생하지 않도록 만든 표준. POSIX 를 따르는 OS 는 시스템콜이 동일하다.
+## 윈도우
+ Batch System 을 기반으로 시작했다. 유닉스 계열이 아니다.
+## 리눅스
+ 리누즈 토발즈가 개발했으며 무료 소프트웨어 개념은 GNU 프로젝트를 이어서 완전히
+오픈소스인 OS 이다. 안드로이드, iOS 도 리눅스 기반이다. 서버, 임베디드 등 많은 곳에서
+사용되고 있다.
+임베디드에서 사용되는 가장 대표적인 높은 신뢰성의 운영체제로 VxWorks 가 있다.
+항공산업 등에서 사용된다.
