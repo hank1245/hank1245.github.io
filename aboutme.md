@@ -13,4 +13,4 @@ subtitle: Brief history.
 
 
 ### 일상
-[X](https://twitter.com/HankKimDev)와 [Instagram](https://www.instagram.com/huiung1)에서 확인하실 수 있어요.
+[X](https://twitter.com/HankKimDev)와 [Instagram](https://www.instagram.com/huiung1)에서 확인해보세요!
