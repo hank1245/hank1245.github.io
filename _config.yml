@@ -20,8 +20,8 @@ author: Hank의 개발 블로그
 ###############################################
 
 navbar-links:
-  About Me: "aboutme"
   Tags: "tags" 
+  About : "aboutme"
 
 ################
 # --- Logo --- #
