@@ -1,8 +1,8 @@
 ---
 layout: post
-title: JS 1
-subtitle: about JS
-tags: [JS]
+title: python
+subtitle: about python
+tags: [python]
 comments: true
 author: Hank Kim
 ---
