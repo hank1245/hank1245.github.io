@@ -11,3 +11,6 @@ author: Hank Kim
 # dummy post
 
 ## hello
+
+I just wanted to say hello. This is very nice
+I just wanted to say hello. This is very niceI just wanted to say hello. This is very niceI just wanted to say hello. This is very niceI just wanted to say hello. This is very niceI just wanted to say hello. This is very nice
