@@ -1,16 +1,84 @@
 ---
 layout: page
 title: About me
-subtitle: Brief history.
+subtitle: Frontend Developer & CS Student
 ---
 
-### My Story
+<div class="about-container">
+  <div class="about-section">
+    <h3>👋 Hello, I'm Hank</h3>
+    <p>Frontend Developer with a passion for creating beautiful and functional web experiences. Currently studying Computer Science and English Literature at Kyung Hee University.</p>
+  </div>
 
-- 경희대학교에서 컴퓨터공학과 영어영문학을 전공하고 있어요. (2019 ~ )
-- 육군에서 운전병으로 복무했어요. (2020/4 - 2021/10)
-- Zerobase 프론트엔드 부트캠프를 수료했어요. (2022/1 - 2022/6)
-- SeedN에서 프론트엔드 개발자로 일했어요. (2022/7 - 2023/8)
+  <div class="timeline">
+    <h3>🚀 My Journey</h3>
+    <div class="timeline-item">
+      <div class="timeline-date">2019 - Present</div>
+      <div class="timeline-content">
+        <h4>Kyung Hee University</h4>
+        <p>Computer Engineering & English Literature Major</p>
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-date">2020.04 - 2021.10</div>
+      <div class="timeline-content">
+        <h4>Military Service</h4>
+        <p>Republic of Korea Army - Driver</p>
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-date">2022.01 - 2022.06</div>
+      <div class="timeline-content">
+        <h4>Zerobase Bootcamp</h4>
+        <p>Frontend Development Bootcamp Graduate</p>
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-date">2022.07 - 2023.08</div>
+      <div class="timeline-content">
+        <h4>SeedN</h4>
+        <p>Frontend Developer</p>
+      </div>
+    </div>
+  </div>
 
+  <div class="skills-section">
+    <h3>💻 Tech Stack</h3>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h4>Frontend</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">HTML/CSS</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h4>Tools & Others</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Webpack</span>
+          <span class="skill-tag">Jekyll</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
-### 일상
-[X](https://twitter.com/HankKimDev)와 [Instagram](https://www.instagram.com/huiung1)에서 확인해보세요!
+  <div class="contact-section">
+    <h3>📫 Let's Connect</h3>
+    <p>Follow me on social media to see what I'm up to!</p>
+    <div class="social-links">
+      <a href="https://twitter.com/HankKimDev" class="social-link">
+        <i class="fab fa-twitter"></i> Twitter
+      </a>
+      <a href="https://www.instagram.com/huiung1" class="social-link">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+    </div>
+  </div>
+</div>

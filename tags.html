@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '카테고리'
+title: 'Tags'
 ---
 
 {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
@@ -12,25 +12,39 @@ title: '카테고리'
 {%- endcapture -%}
 {%- assign tags_list = site_tags | split:',' | sort -%}
 
-{%- for tag in tags_list -%}
-    <a href="#{{- tag -}}" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;{{- tag -}}&nbsp;({{site.tags[tag].size}})</a>
-{%- endfor -%}
-
-<div id="full-tags-list">
-{%- for tag in tags_list -%}
-    <h2 id="{{- tag -}}" class="linked-section">
-        <i class="fas fa-tag" aria-hidden="true"></i>
-        &nbsp;{{- tag -}}&nbsp;({{site.tags[tag].size}})
-    </h2>
-    <div class="post-list">
-        {%- for post in site.tags[tag] -%}
-            <div class="tag-entry">
-                <a href="{{ post.url | relative_url }}">{{- post.title | strip_html -}}</a>
-                <div class="entry-date">
-                    <time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: date_format -}}</time>
-                </div>
-            </div>
+<div class="tags-page-container">
+    <div class="tags-cloud">
+        {%- for tag in tags_list -%}
+            <a href="#{{- tag -}}" class="tag-cloud-item">
+                {{- tag -}}
+                <span class="tag-count">{{site.tags[tag].size}}</span>
+            </a>
         {%- endfor -%}
     </div>
-{%- endfor -%}
+
+    <div class="tags-content">
+        {%- for tag in tags_list -%}
+            <section id="{{- tag -}}" class="tag-section">
+                <h2 class="tag-heading">
+                    {{- tag -}}
+                    <span class="tag-post-count">{{site.tags[tag].size}} posts</span>
+                </h2>
+                <div class="tag-posts-grid">
+                    {%- for post in site.tags[tag] -%}
+                        <article class="tag-post-card">
+                            <a href="{{ post.url | relative_url }}" class="tag-post-link">
+                                <h3 class="tag-post-title">{{- post.title | strip_html -}}</h3>
+                                <time class="tag-post-date" datetime="{{- post.date | date_to_xmlschema -}}">
+                                    {{- post.date | date: date_format -}}
+                                </time>
+                                {% if post.excerpt %}
+                                    <p class="tag-post-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+                                {% endif %}
+                            </a>
+                        </article>
+                    {%- endfor -%}
+                </div>
+            </section>
+        {%- endfor -%}
+    </div>
 </div>
