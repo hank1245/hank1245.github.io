@@ -58,13 +58,13 @@ main {
   margin-right: 1rem !important;
 }
 
-/* 포스트 그리드 레이아웃 - 2열 레이아웃 (확장된 너비) */
+/* 포스트 그리드 레이아웃 - 중앙정렬 및 단순화된 반응형 */
 .posts-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
-  padding: 6rem 4rem 3rem 4rem;
-  max-width: 1800px;
+  padding: 6rem 2rem 3rem 2rem;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -239,7 +239,15 @@ footer a:hover {
   color: #cccccc !important;
 }
 
-/* 반응형 디자인 */
+/* 단순화된 반응형 디자인 */
+@media (max-width: 1024px) {
+  .posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 5rem 2rem 3rem 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .navbar-brand {
     font-size: 1.5rem !important;
@@ -333,11 +341,23 @@ body {
   cursor: default;
 }
 
-/* 더 나은 컨테이너 스타일링 - 확장된 너비 */
+/* 컨테이너 스타일링 - 중앙정렬 */
 .container-md {
-  max-width: 1600px !important;
+  max-width: 1200px !important;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+/* Bootstrap 그리드 오버라이드 - 1200px에서 축소 방지 */
+@media (min-width: 1200px) {
+  .col-xl-8 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .offset-xl-2 {
+    margin-left: 0 !important;
+  }
 }
 
 @media (max-width: 576px) {
@@ -815,31 +835,3 @@ main {
   }
 }
 
-/* Large screen optimizations */
-@media (min-width: 1400px) {
-  .posts-grid {
-    padding: 6rem 6rem 3rem 6rem;
-  }
-
-  .container-md {
-    padding: 0 3rem;
-  }
-
-  .post-preview {
-    padding: 2.5rem;
-  }
-}
-
-@media (min-width: 1600px) {
-  .posts-grid {
-    padding: 6rem 8rem 3rem 8rem;
-  }
-
-  .container-md {
-    padding: 0 4rem;
-  }
-
-  .post-preview {
-    padding: 3rem;
-  }
-}
