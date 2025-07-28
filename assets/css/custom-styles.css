@@ -1,27 +1,39 @@
 /* Google Fonts Import */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 
-/* 전체 배경을 검은색으로 설정 */
+/* Root Variables */
+:root {
+  --bg-primary: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --text-muted: #888888;
+  --border-color: #333;
+  --hover-bg: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.02);
+  --transition: all 0.3s ease;
+}
+
+/* Base Styles */
 html,
 body {
-  background-color: #1a1a1a !important;
-  color: #ffffff !important;
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     sans-serif;
   margin: 0;
   padding: 0;
 }
 
-/* 메인 컨테이너 */
 main {
-  background-color: #1a1a1a !important;
+  background-color: var(--bg-primary) !important;
   min-height: 100vh;
+  padding-top: 100px !important;
 }
 
-/* 네비게이션 바 스타일 - 고정형 헤더 */
+/* Navigation */
 .navbar-custom {
-  background-color: #1a1a1a !important;
-  border-bottom: 1px solid #333 !important;
+  background-color: var(--bg-primary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
   padding: 1rem 0 !important;
   position: fixed !important;
   top: 0 !important;
@@ -33,7 +45,7 @@ main {
 .navbar-brand {
   font-size: 2rem !important;
   font-weight: 500 !important;
-  color: #ffffff !important;
+  color: var(--text-primary) !important;
   letter-spacing: -1px;
   margin-left: 2rem;
 }
@@ -43,38 +55,38 @@ main {
 }
 
 .navbar-nav .nav-link {
-  color: #ffffff !important;
+  color: var(--text-primary) !important;
   font-size: 1.1rem !important;
   font-weight: 400 !important;
   margin: 0 1rem;
-  text-transform: none;
+  transition: var(--transition);
 }
 
 .navbar-nav .nav-link:hover {
-  color: #cccccc !important;
+  color: var(--text-secondary) !important;
 }
 
 .navbar-toggler {
   margin-right: 1rem !important;
 }
 
-/* 포스트 그리드 레이아웃 - 중앙정렬 및 단순화된 반응형 */
+/* Post Grid Layout */
 .posts-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
-  padding: 6rem 2rem 3rem 2rem;
+  padding: 6rem 0 3rem 0;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* 포스트 카드 스타일 (개선된 디자인) */
+/* Post Cards */
 .post-preview {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid #333;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 2rem;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   overflow: hidden;
 }
 
@@ -84,15 +96,11 @@ main {
   border-color: #555;
 }
 
-.post-card-link {
-  text-decoration: none !important;
-  color: inherit !important;
-  display: block;
-}
-
+.post-card-link,
 .post-card-link:hover {
   text-decoration: none !important;
   color: inherit !important;
+  display: block;
 }
 
 .post-card {
@@ -102,7 +110,7 @@ main {
   background: transparent;
 }
 
-/* 포스트 이미지 - 개선된 크기 */
+/* Post Images */
 .post-image-right {
   width: 100%;
   height: 220px;
@@ -115,90 +123,67 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: var(--transition);
 }
 
 .post-image-right:hover img {
   transform: scale(1.05);
 }
 
-/* 포스트 콘텐츠 */
+/* Post Content */
 .post-content {
   flex: 1;
   padding: 0;
 }
 
-/* 포스트 제목 */
 .post-title {
-  font-size: 0.8rem !important;
+  font-size: 1.1rem !important;
   font-weight: 600 !important;
-  color: #ffffff !important;
+  color: var(--text-primary) !important;
   margin: 0 0 0.75rem 0 !important;
   line-height: 1.3 !important;
 }
 
-.post-title:hover {
-  color: #ffffff !important;
-}
-
-/* 포스트 링크 */
-.post-content a {
-  color: #ffffff !important;
-  text-decoration: none !important;
-}
-
+.post-content a,
 .post-content a:hover {
-  color: #ffffff !important;
+  color: var(--text-primary) !important;
   text-decoration: none !important;
 }
 
-/* 포스트 메타데이터 */
 .post-meta {
   font-size: 0.9rem !important;
-  color: #888888 !important;
+  color: var(--text-muted) !important;
   margin: 0 0 1rem 0 !important;
   font-weight: 400;
 }
 
-/* 포스트 엔트리 (설명) */
 .post-entry {
-  color: #cccccc !important;
+  color: var(--text-secondary) !important;
   line-height: 1.5;
   margin: 0.75rem 0;
   font-size: 0.9rem;
 }
 
 .post-read-more {
-  color: #ffffff !important;
+  color: var(--text-primary) !important;
   font-weight: 500;
   text-decoration: none !important;
+  transition: var(--transition);
 }
 
 .post-read-more:hover {
-  color: #cccccc !important;
+  color: var(--text-secondary) !important;
 }
 
-/* 태그 스타일 */
+/* Tags */
 .blog-tags {
   margin-top: 1rem;
 }
 
-.tag-item {
-  background: rgba(255, 255, 255, 0.1) !important;
-  color: #ffffff !important;
-  padding: 0.3rem 0.8rem !important;
-  border-radius: 15px !important;
-  text-decoration: none !important;
-  font-size: 0.8rem !important;
-  font-weight: 400 !important;
-  margin: 0.2rem 0.3rem 0.2rem 0 !important;
-  display: inline-block;
-  transition: none;
-}
-
+.tag-item,
 .blog-tags a {
-  background: rgba(255, 255, 255, 0.1) !important;
-  color: #ffffff !important;
+  background: var(--hover-bg) !important;
+  color: var(--text-primary) !important;
   padding: 0.3rem 0.8rem !important;
   border-radius: 15px !important;
   text-decoration: none !important;
@@ -206,45 +191,47 @@ main {
   font-weight: 400 !important;
   margin: 0.2rem 0.3rem 0.2rem 0 !important;
   display: inline-block;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .blog-tags a:hover {
   background: rgba(255, 255, 255, 0.2) !important;
-  color: #ffffff !important;
+  color: var(--text-primary) !important;
 }
 
-/* 인트로 헤더 제거 */
+/* Layout */
 .intro-header {
   display: none !important;
 }
 
-/* 컨테이너 패딩 조정 */
 .container-md {
-  padding: 0 !important;
+  padding: 0 2rem !important;
+  max-width: 1200px !important;
+  margin: 0 auto;
 }
 
-/* 푸터 스타일 */
+/* Footer */
 footer {
-  background-color: #1a1a1a !important;
-  border-top: 1px solid #333 !important;
-  color: #ffffff !important;
+  background-color: var(--bg-primary) !important;
+  border-top: 1px solid var(--border-color) !important;
+  color: var(--text-primary) !important;
 }
 
 footer a {
-  color: #ffffff !important;
+  color: var(--text-primary) !important;
+  transition: var(--transition);
 }
 
 footer a:hover {
-  color: #cccccc !important;
+  color: var(--text-secondary) !important;
 }
 
-/* 단순화된 반응형 디자인 */
+/* Responsive Design */
 @media (max-width: 1024px) {
   .posts-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    padding: 5rem 2rem 3rem 2rem;
+    padding: 5rem 0 3rem 0;
   }
 }
 
@@ -261,7 +248,7 @@ footer a:hover {
   .posts-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    padding: 5rem 1.5rem 2rem 1.5rem;
+    padding: 5rem 0 2rem 0;
   }
 
   .post-image-right {
@@ -269,7 +256,7 @@ footer a:hover {
   }
 
   .post-title {
-    font-size: 0.8rem !important;
+    font-size: 1rem !important;
   }
 }
 
@@ -279,7 +266,7 @@ footer a:hover {
   }
 
   .posts-grid {
-    padding: 4.5rem 1rem 1.5rem 1rem;
+    padding: 4.5rem 0 1.5rem 0;
   }
 
   .post-image-right {
@@ -287,18 +274,12 @@ footer a:hover {
   }
 }
 
-/* 메인 컨테이너 여백 조정 (고정 헤더 보상) */
+/* Body Padding */
 body {
   padding-top: 80px;
 }
 
-@media (max-width: 768px) {
-  body {
-    padding-top: 70px;
-  }
-}
-
-/* 페이지네이션 개선 */
+/* Pagination */
 .pagination {
   display: flex;
   justify-content: center;
@@ -316,17 +297,17 @@ body {
 .pagination .page-link {
   background-color: transparent !important;
   border: 1px solid #444 !important;
-  color: #ffffff !important;
+  color: var(--text-primary) !important;
   padding: 0.5rem 1rem !important;
   border-radius: 4px !important;
   text-decoration: none !important;
-  transition: all 0.3s ease !important;
+  transition: var(--transition) !important;
 }
 
 .pagination .page-link:hover {
-  background-color: #ffffff !important;
-  color: #1a1a1a !important;
-  border-color: #ffffff !important;
+  background-color: var(--text-primary) !important;
+  color: var(--bg-primary) !important;
+  border-color: var(--text-primary) !important;
 }
 
 .pagination .page-item.disabled .page-link {
@@ -335,26 +316,14 @@ body {
 }
 
 .pagination .page-item.active .page-link {
-  background-color: #ffffff !important;
-  color: #1a1a1a !important;
-  border-color: #ffffff !important;
+  background-color: var(--text-primary) !important;
+  color: var(--bg-primary) !important;
+  border-color: var(--text-primary) !important;
   cursor: default;
 }
 
-/* 컨테이너 스타일링 - 중앙정렬 */
-.container-md {
-  max-width: 1200px !important;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-/* 992px 이하에서 콘텐츠 마진 추가 */
+/* Container Overrides */
 @media (max-width: 991px) {
-  .container-md {
-    margin-left: 1rem !important;
-    margin-right: 1rem !important;
-  }
-
   main .row {
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -366,7 +335,6 @@ body {
   }
 }
 
-/* Bootstrap 그리드 오버라이드 - 1200px에서 축소 방지 */
 @media (min-width: 1200px) {
   .col-xl-8 {
     flex: 0 0 100% !important;
@@ -378,19 +346,19 @@ body {
   }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 768px) {
   .container-md {
-    padding: 0 2rem;
+    padding: 0 1.5rem !important;
   }
 }
 
 @media (max-width: 576px) {
   .container-md {
-    padding: 0 1.5rem;
+    padding: 0 1rem !important;
   }
 }
 
-/* Tags Page Styles */
+/* Tags Page */
 .tags-page-container {
   padding: 2rem 0;
 }
@@ -403,18 +371,18 @@ body {
   padding: 2rem;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  border: 1px solid #333;
+  border: 1px solid var(--border-color);
 }
 
 .tag-cloud-item {
-  background: rgba(255, 255, 255, 0.1) !important;
-  color: #ffffff !important;
+  background: var(--hover-bg) !important;
+  color: var(--text-primary) !important;
   padding: 0.5rem 1rem !important;
   border-radius: 20px !important;
   text-decoration: none !important;
   font-size: 0.9rem !important;
   font-weight: 500 !important;
-  transition: all 0.3s ease !important;
+  transition: var(--transition) !important;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -422,7 +390,7 @@ body {
 
 .tag-cloud-item:hover {
   background: rgba(255, 255, 255, 0.2) !important;
-  color: #ffffff !important;
+  color: var(--text-primary) !important;
   transform: translateY(-2px);
 }
 
@@ -445,10 +413,10 @@ body {
 .tag-heading {
   font-size: 1.75rem !important;
   font-weight: 600 !important;
-  color: #ffffff !important;
+  color: var(--text-primary) !important;
   margin-bottom: 1.5rem !important;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -456,7 +424,7 @@ body {
 
 .tag-post-count {
   font-size: 0.9rem;
-  color: #888;
+  color: var(--text-muted);
   font-weight: 400;
 }
 
@@ -469,10 +437,10 @@ body {
 
 .tag-post-card {
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid #333;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 1.5rem;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .tag-post-card:hover {
@@ -489,21 +457,21 @@ body {
 .tag-post-title {
   font-size: 1.1rem !important;
   font-weight: 600 !important;
-  color: #ffffff !important;
+  color: var(--text-primary) !important;
   margin: 0 0 0.75rem 0 !important;
   line-height: 1.4 !important;
 }
 
 .tag-post-date {
   font-size: 0.85rem;
-  color: #888;
+  color: var(--text-muted);
   display: block;
   margin-bottom: 0.75rem;
 }
 
 .tag-post-excerpt {
   font-size: 0.9rem;
-  color: #ccc;
+  color: var(--text-secondary);
   line-height: 1.5;
   margin: 0;
 }
@@ -525,7 +493,7 @@ body {
   }
 }
 
-/* About Page Styles */
+/* About Page */
 .about-container {
   max-width: 800px;
   margin: 0 auto;
@@ -540,13 +508,13 @@ body {
 .about-section h3 {
   font-size: 2rem !important;
   font-weight: 600 !important;
-  color: #ffffff !important;
+  color: var(--text-primary) !important;
   margin-bottom: 1rem !important;
 }
 
 .about-section p {
   font-size: 1.1rem;
-  color: #cccccc !important;
+  color: var(--text-secondary) !important;
   line-height: 1.6;
 }
 
@@ -557,7 +525,7 @@ body {
 .timeline h3 {
   font-size: 1.75rem !important;
   font-weight: 600 !important;
-  color: #ffffff !important;
+  color: var(--text-primary) !important;
   margin-bottom: 2rem !important;
   text-align: center;
 }
@@ -568,13 +536,13 @@ body {
   padding: 1.5rem;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 8px;
-  border-left: 4px solid #ffffff;
+  border-left: 4px solid var(--text-primary);
 }
 
 .timeline-date {
   min-width: 140px;
   font-size: 0.9rem;
-  color: #888;
+  color: var(--text-muted);
   font-weight: 500;
   margin-right: 2rem;
 }
@@ -582,12 +550,12 @@ body {
 .timeline-content h4 {
   font-size: 1.2rem !important;
   font-weight: 600 !important;
-  color: #ffffff !important;
+  color: var(--text-primary) !important;
   margin: 0 0 0.5rem 0 !important;
 }
 
 .timeline-content p {
-  color: #cccccc !important;
+  color: var(--text-secondary) !important;
   margin: 0 !important;
   font-size: 0.95rem;
 }
@@ -599,7 +567,7 @@ body {
 .skills-section h3 {
   font-size: 1.75rem !important;
   font-weight: 600 !important;
-  color: #ffffff !important;
+  color: var(--text-primary) !important;
   margin-bottom: 2rem !important;
   text-align: center;
 }
@@ -613,7 +581,7 @@ body {
 .skill-category h4 {
   font-size: 1.1rem !important;
   font-weight: 600 !important;
-  color: #ffffff !important;
+  color: var(--text-primary) !important;
   margin-bottom: 1rem !important;
 }
 
@@ -624,8 +592,8 @@ body {
 }
 
 .skill-tag {
-  background: rgba(255, 255, 255, 0.1) !important;
-  color: #ffffff !important;
+  background: var(--hover-bg) !important;
+  color: var(--text-primary) !important;
   padding: 0.4rem 0.8rem !important;
   border-radius: 15px !important;
   font-size: 0.85rem !important;
@@ -639,12 +607,12 @@ body {
 .contact-section h3 {
   font-size: 1.75rem !important;
   font-weight: 600 !important;
-  color: #ffffff !important;
+  color: var(--text-primary) !important;
   margin-bottom: 1rem !important;
 }
 
 .contact-section p {
-  color: #cccccc !important;
+  color: var(--text-secondary) !important;
   margin-bottom: 2rem !important;
 }
 
@@ -655,13 +623,13 @@ body {
 }
 
 .social-link {
-  background: rgba(255, 255, 255, 0.1) !important;
-  color: #ffffff !important;
+  background: var(--hover-bg) !important;
+  color: var(--text-primary) !important;
   padding: 0.75rem 1.5rem !important;
   border-radius: 25px !important;
   text-decoration: none !important;
   font-weight: 500 !important;
-  transition: all 0.3s ease !important;
+  transition: var(--transition) !important;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -669,7 +637,7 @@ body {
 
 .social-link:hover {
   background: rgba(255, 255, 255, 0.2) !important;
-  color: #ffffff !important;
+  color: var(--text-primary) !important;
   transform: translateY(-2px);
 }
 
@@ -881,7 +849,7 @@ main {
 
 @media (max-width: 576px) {
   .posts-grid {
-    padding: 4.5rem 1rem 1.5rem 1rem;
+    padding: 4.5rem 0 1.5rem 0;
   }
 
   .post-image-right {
