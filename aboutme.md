@@ -49,8 +49,8 @@ subtitle: Frontend Developer & CS Student
     <h3>📫 Let's Connect</h3>
     <p>Follow me on social media to see what I'm up to!</p>
     <div class="social-links">
-      <a href="https://twitter.com/HankKimDev" class="social-link">
-        <i class="fab fa-twitter"></i> Twitter
+      <a href="https://x.com/HankKimDev" class="social-link">
+        <i class="fa-brands fa-x-twitter"></i>
       </a>
       <a href="https://www.instagram.com/huiung1" class="social-link">
         <i class="fab fa-instagram"></i> Instagram

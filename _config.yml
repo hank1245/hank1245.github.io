@@ -10,10 +10,10 @@
 ############################
 
 # Name of website
-title: Travel.
+title: Hank Kim.
 
 # Your name to show in the footer
-author: Hank의 개발 블로그
+author: Hank Kim's development blog
 
 ###############################################
 # --- List of links in the navigation bar --- #
@@ -54,7 +54,6 @@ rss-description: This website is a virtual proof that I'm awesome
 ###########################
 # --- General options --- #
 ###########################
-
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
