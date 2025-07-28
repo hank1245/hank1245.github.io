@@ -64,7 +64,7 @@ main {
   grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
   padding: 6rem 4rem 3rem 4rem;
-  max-width: 1600px;
+  max-width: 1800px;
   margin: 0 auto;
 }
 
@@ -73,7 +73,7 @@ main {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid #333;
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 2rem;
   transition: all 0.3s ease;
   overflow: hidden;
 }
@@ -181,12 +181,6 @@ main {
 /* 태그 스타일 */
 .blog-tags {
   margin-top: 1rem;
-}
-
-.blog-tags span {
-  color: #ffffff !important;
-  font-size: 0.85rem;
-  margin-right: 0.2rem;
 }
 
 .tag-item {
@@ -830,6 +824,10 @@ main {
   .container-md {
     padding: 0 3rem;
   }
+
+  .post-preview {
+    padding: 2.5rem;
+  }
 }
 
 @media (min-width: 1600px) {
@@ -839,5 +837,9 @@ main {
 
   .container-md {
     padding: 0 4rem;
+  }
+
+  .post-preview {
+    padding: 3rem;
   }
 }

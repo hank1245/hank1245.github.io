@@ -45,30 +45,6 @@ subtitle: Frontend Developer & CS Student
     </div>
   </div>
 
-  <div class="skills-section">
-    <h3>💻 Tech Stack</h3>
-    <div class="skills-grid">
-      <div class="skill-category">
-        <h4>Frontend</h4>
-        <div class="skill-tags">
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">HTML/CSS</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h4>Tools & Others</h4>
-        <div class="skill-tags">
-          <span class="skill-tag">Git</span>
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">Webpack</span>
-          <span class="skill-tag">Jekyll</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="contact-section">
     <h3>📫 Let's Connect</h3>
     <p>Follow me on social media to see what I'm up to!</p>
@@ -78,6 +54,9 @@ subtitle: Frontend Developer & CS Student
       </a>
       <a href="https://www.instagram.com/huiung1" class="social-link">
         <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="#" class="social-link">
+        <i class="fas fa-file-alt"></i> Notion
       </a>
     </div>
   </div>
