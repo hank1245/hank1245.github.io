@@ -348,6 +348,14 @@ body {
   padding: 0 2rem;
 }
 
+/* 992px 이하에서 콘텐츠 마진 추가 */
+@media (max-width: 991px) {
+  .container-md {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+}
+
 /* Bootstrap 그리드 오버라이드 - 1200px에서 축소 방지 */
 @media (min-width: 1200px) {
   .col-xl-8 {
@@ -360,9 +368,15 @@ body {
   }
 }
 
+@media (max-width: 1199px) {
+  .container-md {
+    padding: 0 2rem;
+  }
+}
+
 @media (max-width: 576px) {
   .container-md {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
   }
 }
 
