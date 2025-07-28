@@ -54,6 +54,10 @@ main {
   color: #cccccc !important;
 }
 
+.navbar-toggler {
+  margin-right: 1rem !important;
+}
+
 /* 포스트 그리드 레이아웃 - 2열 레이아웃 (확장된 너비) */
 .posts-grid {
   display: grid;
@@ -78,6 +82,17 @@ main {
   transform: translateY(-5px);
   background: rgba(255, 255, 255, 0.04);
   border-color: #555;
+}
+
+.post-card-link {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: block;
+}
+
+.post-card-link:hover {
+  text-decoration: none !important;
+  color: inherit !important;
 }
 
 .post-card {
@@ -171,7 +186,20 @@ main {
 .blog-tags span {
   color: #ffffff !important;
   font-size: 0.85rem;
-  margin-right: 0.5rem;
+  margin-right: 0.2rem;
+}
+
+.tag-item {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  padding: 0.3rem 0.8rem !important;
+  border-radius: 15px !important;
+  text-decoration: none !important;
+  font-size: 0.8rem !important;
+  font-weight: 400 !important;
+  margin: 0.2rem 0.3rem 0.2rem 0 !important;
+  display: inline-block;
+  transition: none;
 }
 
 .blog-tags a {
@@ -607,6 +635,39 @@ body {
   transform: translateY(-2px);
 }
 
+/* Back to Home Button */
+.back-to-home {
+  margin-bottom: 2rem;
+  margin-top: 2.5rem;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 25px !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+  transition: all 0.3s ease !important;
+  border: 1px solid #333;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transform: translateY(-2px);
+  border-color: #555;
+}
+
+.back-button i {
+  font-size: 0.8rem;
+}
+
 /* Post Page Improvements */
 .blog-post {
   font-size: 1.1rem !important;
@@ -614,7 +675,12 @@ body {
   color: #ffffff !important;
 }
 
-.blog-post h1, .blog-post h2, .blog-post h3, .blog-post h4, .blog-post h5, .blog-post h6 {
+.blog-post h1,
+.blog-post h2,
+.blog-post h3,
+.blog-post h4,
+.blog-post h5,
+.blog-post h6 {
   color: #ffffff !important;
   margin-top: 2rem !important;
   margin-bottom: 1rem !important;
@@ -692,54 +758,54 @@ main {
   .about-container {
     padding: 1rem;
   }
-  
+
   .timeline-item {
     flex-direction: column;
   }
-  
+
   .timeline-date {
     margin-right: 0;
     margin-bottom: 0.5rem;
     min-width: auto;
   }
-  
+
   .skills-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .social-links {
     flex-direction: column;
     align-items: center;
   }
-  
+
   main {
     padding-top: 80px !important;
   }
-  
+
   .posts-grid {
     padding: 5rem 1.5rem 2rem 1.5rem;
   }
-  
+
   .post-image-right {
     height: 160px !important;
   }
-  
+
   .blog-post {
     font-size: 1rem !important;
   }
-  
+
   .blog-post h1 {
     font-size: 2rem !important;
   }
-  
+
   .blog-post h2 {
     font-size: 1.75rem !important;
   }
-  
+
   .blog-post h3 {
     font-size: 1.25rem !important;
   }
-  
+
   .blog-post img {
     margin: 1rem 0 !important;
   }
@@ -749,7 +815,7 @@ main {
   .posts-grid {
     padding: 4.5rem 1rem 1.5rem 1rem;
   }
-  
+
   .post-image-right {
     height: 140px !important;
   }
@@ -760,7 +826,7 @@ main {
   .posts-grid {
     padding: 6rem 6rem 3rem 6rem;
   }
-  
+
   .container-md {
     padding: 0 3rem;
   }
@@ -770,7 +836,7 @@ main {
   .posts-grid {
     padding: 6rem 8rem 3rem 8rem;
   }
-  
+
   .container-md {
     padding: 0 4rem;
   }

@@ -39,6 +39,12 @@ layout: base
         </div>
       {% endif %}
 
+      <div class="back-to-home">
+        <a href="{{ '/' | relative_url }}" class="back-button">
+          <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+      </div>
+
       <div class="blog-post">
         {{ content }}
       </div>
