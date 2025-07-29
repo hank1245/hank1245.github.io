@@ -47,16 +47,10 @@ subtitle: Frontend Developer & CS Student
 
   <div class="contact-section">
     <h3>📫 Let's Connect</h3>
-    <p>Follow me on social media to see what I'm up to!</p>
+    <p>Check out my Notion Page to see what I'm up to!</p>
     <div class="social-links">
-      <a href="https://x.com/HankKimDev" class="social-link">
-        <i class="fa-brands fa-x-twitter"></i>
-      </a>
-      <a href="https://www.instagram.com/huiung1" class="social-link">
-        <i class="fab fa-instagram"></i> Instagram
-      </a>
-      <a href="#" class="social-link">
-        <i class="fas fa-file-alt"></i> Notion
+      <a href="https://congruous-pin-925.notion.site/Hank-s-Page-98a206d2119646bfa16527691aafc349" class="social-link">
+        <i class="fas fa-file-alt"></i> Hank's Notion Page
       </a>
     </div>
   </div>
