@@ -5,6 +5,7 @@ subtitle: From account setup to app approval - practical tips for first-time iOS
 tags: [iOS Development, App Store, Expo, React Native]
 comments: true
 author: Hank Kim
+thumbnail-img: /assets/img/appstore.png
 ---
 
 # Apple Developer Program and App Store Submission Guide

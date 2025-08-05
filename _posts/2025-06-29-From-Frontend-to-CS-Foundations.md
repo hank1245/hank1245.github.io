@@ -5,6 +5,7 @@ subtitle: Why I went back to study CS fundamentals as a working developer
 tags: [Computer Science, Frontend Development]
 comments: true
 author: Hank Kim
+thumbnail-img: /assets/img/cs.jpg
 ---
 
 # Studying Computer Science as a Frontend developer

@@ -5,6 +5,7 @@ subtitle: Lessons from Managing Multiple Team Projects
 tags: [Project Management, Team Collaboration, Development Process]
 comments: true
 author: Hank Kim
+thumbnail-img: /assets/img/team.jpg
 ---
 
 # Team Collaboration Guide for Development Projects
@@ -32,6 +33,7 @@ I used to jump straight into technical discussions, but I learned that taking ti
 The hardest part isn't deciding what to build - it's deciding what NOT to build. I've seen too many projects get bogged down in feature creep.
 
 My approach now:
+
 - **Benchmark 3-5 similar services** to understand the competitive landscape
 - **Define core MVP features** that demonstrate our unique value proposition
 - **Create a "parking lot"** for nice-to-have features that we explicitly won't build in V1
@@ -45,6 +47,7 @@ This stage used to frustrate me because it felt like overhead, but I've learned 
 ### Communication Channels
 
 **Slack Setup**: I create specific channels from day one:
+
 - `#general` for announcements and general discussion
 - `#frontend` and `#backend` for technical discussions
 - `#design` for UI/UX conversations
@@ -59,6 +62,7 @@ Setting up the GitHub organization properly has saved me countless hours:
 **Repository Structure**: I create separate repos for `frontend`, `backend`, `docs`, and `design`. This keeps concerns separated and makes access control easier.
 
 **Branch Strategy**: I use a simple but effective strategy:
+
 - `main` branch (protected, requires reviews)
 - `dev` branch for integration
 - `feature/*` branches for new features
@@ -71,6 +75,7 @@ Setting up the GitHub organization properly has saved me countless hours:
 I've tried various project management tools, and what matters most is consistency rather than the specific tool. Currently, I use GitHub Projects with Kanban boards because it integrates seamlessly with our development workflow.
 
 **Milestones I always set**:
+
 - MVP completion
 - Integration testing phase
 - Final delivery
@@ -105,6 +110,7 @@ I've learned that people can wear multiple hats, but there needs to be clear own
 ### Feature Specification
 
 I maintain a detailed feature specification document in Notion that includes:
+
 - User stories for each feature
 - Acceptance criteria
 - API requirements
@@ -141,6 +147,7 @@ I maintain a detailed feature specification document in Notion that includes:
 ### Development Workflow
 
 Our process is:
+
 1. Create GitHub issue for each feature
 2. Create feature branch
 3. Develop and test locally
@@ -158,6 +165,7 @@ Our process is:
 I schedule dedicated integration testing periods halfway through the project. This isn't when we discover major architectural issues - those should be caught earlier. This is for fine-tuning the connections between systems.
 
 **Testing Strategy**:
+
 - Frontend: Component testing and mock server testing
 - Backend: Unit tests and Swagger UI testing
 - Integration: End-to-end scenario testing with Postman
@@ -165,6 +173,7 @@ I schedule dedicated integration testing periods halfway through the project. Th
 ### CI/CD Setup
 
 **GitHub Actions**: We automate deployments to prevent human error and ensure consistency.
+
 - Frontend deploys to Vercel/Netlify automatically
 - Backend deploys to Railway/Render
 - Failed builds trigger Slack notifications
@@ -174,6 +183,7 @@ I schedule dedicated integration testing periods halfway through the project. Th
 ### Code Quality
 
 Before final delivery, we do a comprehensive code review focusing on:
+
 - Removing dead code
 - Adding proper error handling
 - Improving user experience for edge cases
@@ -190,7 +200,8 @@ Before final delivery, we do a comprehensive code review focusing on:
 
 **Problem**: Individual feature development goes well, but integration takes forever and reveals major incompatibilities.
 
-**My Solution**: 
+**My Solution**:
+
 - Schedule integration checkpoints at the midpoint of development
 - Share data format examples early
 - Use mock APIs for independent development
@@ -201,6 +212,7 @@ Before final delivery, we do a comprehensive code review focusing on:
 **Problem**: Team members work in silos and duplicate effort or build incompatible features.
 
 **My Solution**:
+
 - Daily stand-ups (even if brief)
 - Clear documentation of decisions in shared spaces
 - Public technical discussions in Slack channels
@@ -211,20 +223,21 @@ Before final delivery, we do a comprehensive code review focusing on:
 **Problem**: "Quick additions" derail timelines and complicate the codebase.
 
 **My Solution**:
+
 - Maintain a strict feature freeze after 70% of development is complete
 - Document new ideas in the parking lot for future iterations
 - Regular timeline reviews with the whole team
 
 ## Tools That Have Become Essential
 
-| Purpose | Tool | Why It Works |
-|---------|------|-------------|
-| Real-time Communication | Discord/Zoom | Screen sharing and voice for complex discussions |
-| Async Communication | Slack | Organized channels and searchable history |
-| Documentation | Notion | Rich formatting and database features |
-| Design | Figma/FigJam | Real-time collaboration and component systems |
-| API Documentation | Swagger | Interactive documentation and testing |
-| Project Management | GitHub Projects | Integrated with development workflow |
+| Purpose                 | Tool            | Why It Works                                     |
+| ----------------------- | --------------- | ------------------------------------------------ |
+| Real-time Communication | Discord/Zoom    | Screen sharing and voice for complex discussions |
+| Async Communication     | Slack           | Organized channels and searchable history        |
+| Documentation           | Notion          | Rich formatting and database features            |
+| Design                  | Figma/FigJam    | Real-time collaboration and component systems    |
+| API Documentation       | Swagger         | Interactive documentation and testing            |
+| Project Management      | GitHub Projects | Integrated with development workflow             |
 
 ## Final Thoughts
 

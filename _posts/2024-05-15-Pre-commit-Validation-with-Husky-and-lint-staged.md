@@ -5,6 +5,7 @@ subtitle: Automating Code Quality in JavaScript Projects
 tags: [JavaScript, TypeScript, DevTools, Git]
 comments: true
 author: Hank Kim
+thumbnail-img: /assets/img/husky.png
 ---
 
 # Pre-commit Validation with Husky and lint-staged
@@ -108,7 +109,7 @@ The beautiful thing is that if Prettier makes formatting changes, those changes 
 
 ### The Dreaded React Version Warning
 
-This was the first issue that hit me. ESLint kept complaining: "Warning: React version not specified in eslint-plugin-react settings." 
+This was the first issue that hit me. ESLint kept complaining: "Warning: React version not specified in eslint-plugin-react settings."
 
 The fix is simple - add this to your `.eslintrc.json`:
 
@@ -178,12 +179,14 @@ For TypeScript projects, ensure your `tsconfig.json` extends the proper base con
 ## Benefits and Best Practices
 
 ### Benefits
+
 - **Consistency**: All committed code follows the same formatting and linting rules
 - **Early Error Detection**: Issues are caught before they enter the repository
 - **Automated Formatting**: No need to manually format code
 - **Team Alignment**: Everyone follows the same code standards
 
 ### Best Practices
+
 - **Keep rules reasonable**: Overly strict rules can slow down development
 - **Document exceptions**: If you need to disable certain rules, document why
 - **Use format on save**: Configure your editor to format on save for immediate feedback
