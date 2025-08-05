@@ -12,7 +12,7 @@ thumbnail-img: /assets/img/rpc.png
 
 ## The Ethereum Moment That Started It All
 
-Picture this: you're trying to get the latest block number from the Ethereum blockchain. You fire up your terminal and run:
+To get the latest block number from the Ethereum blockchain, you would run:
 
 ```bash
 curl https://eth.llamarpc.com \
@@ -27,7 +27,7 @@ And boom! You get back:
 { "jsonrpc": "2.0", "id": 1, "result": "0x12a7d9f" }
 ```
 
-That hex number `0x12a7d9f` translates to block 19,721,183. Pretty straightforward, right? But here's the thing - you just used RPC, not REST. And if you're like most developers, you probably didn't even think twice about it.
+That hex number `0x12a7d9f` translates to block 19,721,183. This is straightforward, but you just used RPC, not REST. Most developers use this without considering the architectural difference.
 
 This got me thinking: when do we actually choose RPC over REST, and why does it matter?
 
@@ -179,7 +179,7 @@ REST's uniform interface makes it predictable. Once you know the resource URL, y
 
 ## The Modern Plot Twist: Enter gRPC and tRPC
 
-Here's where things get interesting. While REST dominated web APIs for years, RPC never really went away. In fact, it's making a serious comeback with modern implementations:
+While REST dominated web APIs for years, RPC never disappeared and is experiencing renewed popularity with modern implementations:
 
 ### gRPC: RPC Gets a Makeover
 

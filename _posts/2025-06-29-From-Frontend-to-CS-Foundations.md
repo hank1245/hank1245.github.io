@@ -26,7 +26,7 @@ The complexity of this project included:
 - **3D Graphics**: Implementing Three.js to transform 2D floor plans into interactive 3D models - my first real experience with 3D web development
 - **Mobile Development**: Contributing to our React Native mobile app alongside the web applications
 
-It was an incredible period of growth. I was shipping features, working with powerful libraries, and building tools that had real impact. But there was something missing.
+It was a significant period of growth. I was shipping features, working with powerful libraries, and building tools that had real impact. But there was something missing.
 
 ## The Knowledge Gap
 
@@ -46,11 +46,11 @@ I realized that to break through this ceiling, I needed to go back to fundamenta
 
 So I decided to formally study computer science. I dove into calculus, linear algebra, operating systems, server architecture, microservices, Docker, and more.
 
-It was genuinely exciting. Learning about the mathematics behind 3D graphics, understanding how an OS manages processes, and finally seeing how all pieces of a distributed system connect - it felt like a series of puzzle pieces clicking into place. Concepts that had seemed like cryptic jargon suddenly made sense.
+Learning about the mathematics behind 3D graphics, understanding how an OS manages processes, and seeing how all pieces of a distributed system connect was enlightening. Concepts that had seemed like cryptic jargon started to make sense.
 
 ## The Real Impact
 
-Did studying computer science immediately make me a dramatically better front-end developer? Honestly, no. My day-to-day coding skills didn't take a sudden leap.
+Did studying computer science immediately make me a better front-end developer? Not directly. My day-to-day coding skills didn't change dramatically.
 
 But that wasn't the point.
 
